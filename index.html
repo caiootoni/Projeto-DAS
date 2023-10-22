@@ -10,144 +10,212 @@
     <!-- Bootstrap Js -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="estilo/style.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
 
-    <title>Calculadora IMC</title>
+    <title> Calculadora IMC </title>
 </head>
 <body>
     <header>
-        <img src="imagens/logo.png" alt="ícone">
+        <img src="images/logo.png" alt="ícone">
 
         <div id="titulo">
-            <h1>
-                CALCULADORA DE IMC
-            </h1>
-            <p>
-                Indicador de Massa Corporal
-            </p>
+            <h1> CALCULADORA DE IMC </h1>
+            <h3> Indicador de Massa Corporal </h3>
         </div>
 
-        <button class="botao">
-            <a href="entrar.html" id="link-entrar">Entrar</a>
-        </button>
-        <button class="botao">
-            <a href="cadastrar.html" id="link-cadastrar">Cadastrar</a>
-        </button>
+        <button class="botao"> Entrar </button>
+        <button class="botao"> Cadastrar </button>
     </header>
 
-<nav>
-    <a href="#" id="link-rendimento">Rendimento</a>
-    <a href="#" id="link-ajuda">Ajuda</a>
-</nav>
+    <nav>
+        <a href="#"> Rendimento </a>
+        <a href="ajuda.html"> Ajuda </a>
+    </nav>
 
     <main>
-        <h2>
-            O que é IMC?
-        </h2>
-
+        <h2> O que é IMC? </h2>
         <p>
             O Índice de Massa Corporal (IMC) é uma das principais ferramentas, adotada inclusive pela Organização Mundial de Saúde (OMS), para calcular o chamado “peso ideal”. Obtido a partir do peso e da altura do indivíduo, o IMC também aponta níveis de magreza e obesidade, que são usados para nortear o trabalho de profissionais de saúde e de educadores físicos.
         </p>
 
-        <h2>
-            Como calcular o IMC
-        </h2>
-
+        <h2> Como calcular o IMC </h2>
         <p>
             Para obter o IMC, basta dividir o seu peso (em quilos) pela altura (em metros) elevada ao quadrado (altura x altura). De acordo com o indicador, o peso considerado saudável é aquele situado entre 18,5 e 24,9.
         </p>
 
-        <img src="imagens/calculo-imc.png" alt="cálculo IMC">
+        <img src="images/calculo-imc.png" alt="cálculo IMC">
 
-        <div id="importanciaIMC">
-            <div id="textoImportanciaIMC">
-                <h2>
-                    Importância do IMC
-                </h2>
+        <div id="importancia-imc">
+            <div id="texto-importancia-imc">
+                <h2> Importância do IMC </h2>
         
                 <p>
                     A classificação pode ajudar a identificar problemas de obesidade ou desnutrição, em crianças, adolescentes, adultos e idosos.
-                    <br>
-                    Além de calcular o valor de IMC, esta calculadora também indica qual o intervalo de peso ideal que deve ter para garantir uma melhor qualidade de vida.
-                    <br>
-                    Ter um peso dentro do intervalo de peso ideal ajuda ainda a evitar o aparecimento de várias doenças crônicas, como diabetes e hipertensão e ainda garante a qualidade de vida
                 </p>
-
                 <p>
-                    Descubra agora o seu IMC!
+                    Além de calcular o valor de IMC, esta calculadora também indica qual o intervalo de peso ideal que deve ter para garantir uma melhor qualidade de vida.
                 </p>
-
-                <button class="botao">
-                    Calcular IMC
-                </button>
+                <p>
+                    Ter um peso dentro do intervalo de peso ideal ajuda ainda a evitar o aparecimento de várias doenças crônicas, como diabetes e hipertensão e ainda garante a qualidade de vida.
+                </p>
+                <p>
+                    Descubra agora o seu IMC e tenha uma melhor qualidade de vida!
+                </p>
             </div>
 
-            <div id="calculadoraIMC">
-                <p>ola
+            <div id="calculadora-imc">
+                <form id="form" autocomplete="off">
+                    
+                    <label for="sexo" class="label-calculadora"> Sexo: </label>
+                    <div class="alinhamento">
+                        <button id="botao-masculino-calculadora">
+                            <img src="images/icone-masculino.png" alt="ícone masculino">
+                            <span> Masculino </span>
+                        </button>
+                        
+                        <button id="botao-feminino-calculadora">
+                            <img src="images/icone-feminino.png" alt="ícone feminino">
+                            <span> Feminino </span>                            
+                        </button>
+                    </div>
 
-                </p>
+                    <label for="idade" class="label-calculadora"> Idade: </label>
+                    <div class="alinhamento">
+                        <input id="idade" type="text" class="input-calculadora" placeholder="Ex: 30" required>
+                        <span>
+                            anos
+                        </span>
+                    </div>
+
+                    <label for="altura" class="label-calculadora"> Altura: </label>
+                    <div class="alinhamento">
+                        <input id="altura" type="text" class="input-calculadora" placeholder="Ex: 1,75" required>
+                        <span>
+                            m
+                        </span>
+                    </div>
+
+                    <label for="peso" class="label-calculadora"> Peso: </label>
+                    <div class="alinhamento">
+                        <input id="peso" type="text" class="input-calculadora" placeholder="Ex: 78,8" required>
+                        <span>
+                            kg
+                        </span>
+                    </div>
+
+                    <button id="botao-calcular-calculadora"> CALCULAR </button>
+                </form>
             </div>
         </div>
 
-        <div id="resultadoIMC">
-            <h2>
-                Resultado
-            </h2>
+        <div id="resultado-imc" class="hidden">
+            <h2> Resultado </h2>
 
-            <p>
-                Seu resultado foi:
-            </p>
+            <div>
+                <p>
+                    Seu IMC é:
+                </p>
+                <span id="valor-imc"></span>
+            </div>
         </div>
 
-
-        <h2>
-            Classificação
-        </h2>
-
+        <h2> Entenda seu resultado </h2>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum recusandae odit enim! Nemo assumenda optio, cupiditate, necessitatibus magni nesciunt temporibus, deleniti fugit ad laboriosam architecto placeat possimus repellendus quod pariatur!
+            A classificação do índice de massa corporal (IMC) pode ajudar a identificar problemas de obesidade ou desnutrição, em crianças, adolescentes, adultos e idosos.
         </p>
 
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident fuga animi assumenda incidunt beatae quibusdam unde impedit qui error et magnam, minus quasi, suscipit nesciunt voluptas distinctio veniam cupiditate tempore! 
+            Além de calcular o valor de IMC, esta calculadora também indica qual o intervalo de peso ideal que deve ter para garantir uma melhor qualidade de vida.
         </p>
 
         <p>
-            Estilo de vida saudável
+            Ter um peso dentro do intervalo de peso ideal ajuda ainda a evitar o aparecimento de várias doenças crônicas, como diabetes e hipertensão garantindo um estilo de vida saudável.
         </p>
+
+        <p>
+            Medidas de risco da circunferência abdominal Homem: 94cm Mulheres: 80cm.
+        </p>
+
+        <!-- Hierarquia de tabelas (simples)
+             TABLE = tabela
+                TABLE ROW = linha da tabela (tr)
+                    TABLE HEADER = cabeçalho da tabela
+                    TABLE DATA = dado da tabela (td) -->
+        <table class="tabela-classificacao-imc">
+            <tr class="cabecalho-tabela">
+                <td> IMC </td>
+                <td> Classificação </td>
+            </tr>
+            
+            <tr class="linha-azul">
+                <td> Menor que 18,5 </td>
+                <td> Abaixo do normal </td>
+            </tr>
+
+            <tr>
+                <td> 18,5 a 24,9 </td>
+                <td> Normal </td>
+            </tr>
+            
+            <tr class="linha-azul"> 
+                <td> 25 a 29,9 </td>
+                <td> Sobrepeso </td>
+            </tr>
+
+            <tr>
+                <td> 30 a 39,9 </td>
+                <td> Obesidade Grau 1 </td>
+            </tr>
+            
+            <tr class="linha-azul">
+                <td> 35 a 39,9 </td>
+                <td> Obesidade Grau 2 </td>
+            </tr>
+
+            <tr>
+                <td> Acima de 40 </td>
+                <td> Obesidade Grau 3 </td>
+            </tr>
+        </table>
+
+        <h2> O que fazer para melhorar o IMC? </h2>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus porro eaque dolore dignissimos esse praesentium nostrum non ipsam deserunt, maxime veniam veritatis cum quae officia harum dolores dolorem ea tenetur.
+        </p>
+
     </main>
 
     <footer>
 
-        <img src="imagens/logo-uniessa.png" alt="Logo Uniessa">
+        <div class="rodape">
+            <img src="images/logo-uniessa.png" alt="Logo Uniessa">
+        </div>
 
         <div class="rodape">
-            <h2>
-                SOBRE NÓS
-            </h2>
+            <h2> SOBRE NÓS </h2>
             <p>
-                Site criado e desenvolvido pela equipe de alunos da Uniessa, a fim de realizar o trabalho do DAS
+                Site criado e desenvolvido pela equipe de alunos da Uniessa, a fim de realizar o trabalho do DAS.
             </p>
         </div>
         
         <div class="rodape">
-            <h2>
-                ALUNOS
-            </h2>
+            <h2> ALUNOS </h2>
             <p>
                 <ul>
                     <li>Caio</li>
                     <li>Davi</li>
-                    <li>Guilherme</li>
+                    <li>Raphael</li>
                     <li>Jean</li>
                     <li>Leonardo</li>
                     <li>Petterson</li>
-                    <li>Raphael</li>
+                    <li>Guilherme</li>
                 </ul>
             </p>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
-

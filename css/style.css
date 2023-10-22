@@ -1,0 +1,313 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('fonts/Rubik-VariableFont_wght.ttf') format('truetype');
+    font-style: normal;
+}
+
+:root {
+    --cor-cinza: #455A64;
+    --cor-azul-escuro: #0066D1;
+    --cor-azul-claro: #00A3FD;
+    --cor-azul-claro-fundo: #D9EBFC;
+    --cor-vermelho: #D50054;
+    --cor-azul-fonte: #0063CF;
+    --cor-linha-tabela: #EDFAFF;
+    --cor-borda-tabela: #9CE4FF;
+    --cor-azul-bem-claro: #b2e4f1;
+    --cor-rosa-claro: #fcacef;
+    
+    --fonte-titulo: 'Times New Roman', 'Times, serif';
+    --fonte-padrao: 'Rubik', 'Arial, Verdana', 'Helvetica', 'sans-serif';
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: var(--cor-azul-claro-fundo);
+    font-family: var(--fonte-padrao);
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor-azul-escuro), var(--cor-azul-claro));
+    min-height: 120px;
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    /* Distribui os elementos horizontalmente */
+    justify-content: space-between;
+}
+
+header img {
+    padding-left: 80px;
+}
+
+#titulo {
+    /* Permite que a div cresça e ocupe o espaço restante */
+    flex-grow: 1;
+}
+
+header h1 {
+    color: white;
+    font-family: var(--fonte-titulo);
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.548);
+}
+
+header h3 {
+    color: white;
+    font-family: var(--fonte-titulo);
+    text-align: center;
+    font-size: 1.6em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.548);
+}
+
+.botao {
+    color: white;
+    background-color: var(--cor-vermelho);
+    padding: 5px 15px;
+    margin: 15px;
+    border-radius: 10px;
+    /* Muda o ponteiro do mouse ao passar encima */
+    cursor: pointer;
+}
+
+nav {
+    background-color: var(--cor-azul-escuro);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.363);
+}
+
+nav > a {
+    color: var(--cor-azul-claro-fundo);
+    font-size: 1.1em;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.5s;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.548);
+}
+
+nav > a:hover {
+    color: var(--cor-azul-claro);
+    background-color: var(--cor-azul-claro-fundo);
+}
+
+main {
+    background-color: white;
+    min-width: 300px;
+    max-width: 1200px;
+    padding-top: 20px;
+    margin: auto;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.483);
+}
+
+main > h2 {
+    color: var(--cor-azul-escuro);
+    font-size: 1.6em;
+    font-weight: bold;
+    text-indent: 30px;
+    padding: 25px 50px;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.548);
+    margin: 0px;
+}
+
+main > p {
+    font-size: 1em;
+    text-indent: 30px;
+    text-align: justify;
+    /* Espaçamento entre linhas */
+    line-height: 2em;
+    padding: 5px 50px;
+    margin: 0px;
+}
+
+main > img {
+    margin: 10px 75px 20px 75px;
+}
+
+#importancia-imc {
+    color: white;
+    background-image: linear-gradient(to bottom, var(--cor-azul-escuro), var(--cor-azul-claro));
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+#texto-importancia-imc {
+    height: 530px;
+    width: 685px;
+}
+
+#texto-importancia-imc > h2 {
+    color: white;
+    font-family: var(--fonte-titulo);
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 25px 10px 35px 175px;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.548);
+}
+
+#texto-importancia-imc > p {
+    font-size: 1.1em;
+    font-family: var(--fonte-padrao);
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 2em;
+    margin: 20px 85px 20px 30px;
+}
+
+#calculadora-imc {
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    height: 530px;
+    width: 400px;
+    padding: 15px;
+    box-shadow: 4px 4px 7px 0px rgba(0, 0, 0, 0.363);
+}
+
+.alinhamento {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.alinhamento > p {
+    margin-bottom: 28px;
+}
+
+#botao-masculino-calculadora {
+    height: 46px;
+    width: 160px;
+    background-color: var(--cor-azul-bem-claro);
+    margin: 0px 10px 30px 10px;
+    border-radius: 4px;
+    border: 0px;
+    cursor: pointer;
+    /* Alinha os elementos na horizontal */
+    display: flex;
+    /* Alinha os elementos na vertical */
+    align-items: center;
+}
+
+#botao-feminino-calculadora {
+    height: 46px;
+    width: 160px;
+    background-color: var(--cor-rosa-claro);
+    margin: 0px 10px 30px 10px;
+    border-radius: 4px;
+    border: 0px;
+    cursor: pointer;
+    /* Alinha os elementos na horizontal */
+    display: flex;
+    /* Alinha os elementos na vertical */
+    align-items: center;
+}
+
+.label-calculadora {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.input-calculadora {
+    height: 46px;
+    width: 120px;
+    padding: 16px;
+    margin: 0px 10px 30px 10px;
+    border-radius: 4px;
+    border: 1px solid lightgray;
+}
+
+#botao-calcular-calculadora {
+    height: 46px;
+    width: 345px;
+    color: white;
+    background-color: var(--cor-vermelho);
+    font-weight: bold;
+    margin: 10px;
+    border-radius: 4px;
+    border: 0px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+#resultado-imc {
+    color: white;
+    background-color: var(--cor-cinza);
+    height: 200px;
+    padding: 50px;
+    margin-bottom: 20px;
+}
+
+#resultado-imc h2 {
+    color: var(--cor-azul-claro);
+    font-family: var(--fonte-padrao);
+    font-size: 1.6em;
+}
+
+.tabela-classificacao-imc {
+    width: 500px;
+    /* Tira os espaços entre linhas */
+    border-collapse: collapse;
+    border-radius: 10px;
+    border: 1px solid var(--cor-borda-tabela);
+    margin: 40px 77px;
+}
+
+.tabela-classificacao-imc tr.cabecalho-tabela {
+    font-weight: bold;
+}
+
+.tabela-classificacao-imc tr.linha-azul {
+    background-color: var(--cor-linha-tabela);
+}
+
+.tabela-classificacao-imc td {
+    padding: 10px;
+}
+
+footer {
+    color: white;
+    background-color: var(--cor-azul-escuro);
+    display: flex;
+    align-items: center;
+    /* Distribui os elementos horizontalmente */
+    justify-content: space-between;
+    height: 170px;
+}
+
+footer h2 {
+    color: var(--cor-azul-claro);
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+.rodape {
+    margin: 0px 70px;
+}
+
+footer ul {
+    /* Emoji antes da lista (Emojipedia) (00A0 = espaço) */
+    list-style-type: '\2714\00A0\00A0';
+    /* Bolinha da lista pro lado de dentro */
+    list-style-position: inside;
+    columns: 2;
+}
