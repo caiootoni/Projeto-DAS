@@ -9,7 +9,10 @@
 
     <!-- Bootstrap Js -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
+    
+    <!-- Font Awesome (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
 
@@ -24,171 +27,288 @@
             <h3> Indicador de Massa Corporal </h3>
         </div>
 
-        <button class="botao"> Entrar </button>
-        <button class="botao"> Cadastrar </button>
+        <button class="botao" onclick="abrirDialogLogin()"> 
+            <span>
+                <i class="fa-solid fa-right-to-bracket"></i>
+                Entrar 
+            </span>
+        </button>
+        <button class="botao" onclick="abrirDialogCadastro()"> 
+            <span>
+                <i class="fa-solid fa-user-plus"></i>
+                Cadastrar 
+            </span>
+        </button>
     </header>
 
     <nav>
-        <a href="#"> Rendimento </a>
-        <a href="ajuda.html"> Ajuda </a>
+        <a href="ajuda.html" class="botao" >
+            <span>
+                Desempenho
+                <i class="fa-solid fa-chart-line"></i>
+            </span>
+        </a>
+        
+        <a href="ajuda.html" class="botao"> 
+            <span>
+                Ajuda
+                <i class="fa-solid fa-circle-question"></i>
+            </span>
+        </a>
     </nav>
 
+    <!-- DIALOG LOGIN -->
+    <dialog id="dialog-login">
+        <form id="form-login" autocomplete="off">
+            <div class="alinhamento-dialog">
+                <h1> Login </h1>
+                
+                <button class="botao-fechar-dialog" onclick="fecharDialogLogin()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div>
+                <div class="input-field-dialog">
+                    <div class="icone-input">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <input id="email-login" type="email" class="input-dialog" placeholder="Email">
+                </div>
+            </div>
+
+            <div>
+                <div class="input-field-dialog">
+                    <div class="icone-input">
+                        <i class="fa-solid fa-key"></i>
+                    </div>
+                    <input id="senha-login" type="password" class="input-dialog" placeholder="Senha">
+                </div>
+            </div>
+
+            <div class="alinhamento-centro">
+                <button class="botao-dialog" type="submit" onclick="entrar()">
+                    Login
+                </button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- DIALOG CADASTRO -->
+    <dialog id="dialog-cadastro">
+        <form id="form-cadastro" autocomplete="off">
+            <div class="alinhamento-dialog">
+                <h1> Criar Conta </h1>
+                
+                <button class="botao-fechar-dialog" onclick="fecharDialogCadastro()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div>
+                <div class="input-field-dialog">
+                    <div class="icone-input">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <input id="email-cadastro" type="email" class="input-dialog" placeholder="Email">
+                </div>
+            </div>
+
+            <div>
+                <div class="input-field-dialog">
+                    <div class="icone-input">
+                        <i class="fa-solid fa-key"></i>
+                    </div>
+                    <input id="senha-cadastro" type="password" class="input-dialog" placeholder="Senha">
+                </div>
+            </div>
+
+            <div class="alinhamento-centro">
+                <button class="botao-dialog" type="submit" onclick="cadastrar()">
+                    Criar Conta
+                </button>
+            </div>
+        </form>
+    </dialog>
+
+    
     <main>
-        <h2> O que é IMC? </h2>
-        <p>
-            O Índice de Massa Corporal (IMC) é uma das principais ferramentas, adotada inclusive pela Organização Mundial de Saúde (OMS), para calcular o chamado “peso ideal”. Obtido a partir do peso e da altura do indivíduo, o IMC também aponta níveis de magreza e obesidade, que são usados para nortear o trabalho de profissionais de saúde e de educadores físicos.
-        </p>
+        <div>
+            <h2> O que é IMC? </h2>
+            
+            <p>
+                O Índice de Massa Corporal (IMC) é uma das principais ferramentas, adotada inclusive pela <strong>Organização Mundial de Saúde (OMS)</strong>, para calcular o chamado “peso ideal”. Obtido a partir do peso e da altura do indivíduo, o IMC também aponta níveis de magreza e obesidade, que são usados para nortear o trabalho de profissionais de saúde e de educadores físicos.
+            </p>
 
-        <h2> Como calcular o IMC </h2>
-        <p>
-            Para obter o IMC, basta dividir o seu peso (em quilos) pela altura (em metros) elevada ao quadrado (altura x altura). De acordo com o indicador, o peso considerado saudável é aquele situado entre 18,5 e 24,9.
-        </p>
+            <h2> Como calcular o IMC </h2>
+            <p>
+                Para obter o IMC, basta dividir o seu peso (em quilos) pela altura (em metros) elevada ao quadrado (altura x altura). De acordo com o indicador, o peso considerado saudável é aquele situado entre <strong>18,5 e 24,9</strong>.
+            </p>
 
-        <img src="images/calculo-imc.png" alt="cálculo IMC">
+            <img id="imagem-calculo-imc" src="images/calculo-imc.png" alt="cálculo IMC">
+        </div>
 
         <div id="importancia-imc">
             <div id="texto-importancia-imc">
                 <h2> Importância do IMC </h2>
         
                 <p>
-                    A classificação pode ajudar a identificar problemas de obesidade ou desnutrição, em crianças, adolescentes, adultos e idosos.
+                    A classificação é uma ferramenta valiosa para identificar problemas de obesidade ou desnutrição em indivíduos de todas as faixas etárias, desde crianças e adolescentes até adultos e idosos.
                 </p>
                 <p>
-                    Além de calcular o valor de IMC, esta calculadora também indica qual o intervalo de peso ideal que deve ter para garantir uma melhor qualidade de vida.
+                    Além de calcular o valor do IMC, essa calculadora também fornece orientações sobre o intervalo de peso ideal para manter uma qualidade de vida saudável.
                 </p>
                 <p>
-                    Ter um peso dentro do intervalo de peso ideal ajuda ainda a evitar o aparecimento de várias doenças crônicas, como diabetes e hipertensão e ainda garante a qualidade de vida.
+                    Manter o peso dentro desse intervalo é crucial para prevenir o desenvolvimento de várias doenças crônicas, como diabetes, hipertensão e problemas cardíacos.
                 </p>
                 <p>
-                    Descubra agora o seu IMC e tenha uma melhor qualidade de vida!
+                    <strong>Descubra agora o seu IMC e garanta uma melhor qualidade de vida!</strong>
                 </p>
             </div>
 
             <div id="calculadora-imc">
-                <form id="form" autocomplete="off">
+                <form id="form-calculadora" autocomplete="off">
                     
-                    <label for="sexo" class="label-calculadora"> Sexo: </label>
-                    <div class="alinhamento">
-                        <button id="botao-masculino-calculadora">
-                            <img src="images/icone-masculino.png" alt="ícone masculino">
-                            <span> Masculino </span>
-                        </button>
-                        
-                        <button id="botao-feminino-calculadora">
-                            <img src="images/icone-feminino.png" alt="ícone feminino">
-                            <span> Feminino </span>                            
-                        </button>
+                    <div>
+                        <label for="sexo" class="label-calculadora"> Sexo: </label>
+                        <div class="alinhamento-centro">
+                            <button id="botao-masculino-calculadora" onclick="selecionarMasculino()">
+                                <i class="fa-solid fa-mars"></i>
+                                <span> Masculino </span>
+                            </button>
+                            
+                            <button id="botao-feminino-calculadora" onclick="selecionarFeminino()">
+                                <i class="fa-solid fa-venus"></i>
+                                <span> Feminino </span>                            
+                            </button>
+                        </div>
                     </div>
 
-                    <label for="idade" class="label-calculadora"> Idade: </label>
-                    <div class="alinhamento">
-                        <input id="idade" type="text" class="input-calculadora" placeholder="Ex: 30" required>
-                        <span>
-                            anos
-                        </span>
+                    <div>
+                        <label for="idade" class="label-calculadora"> Idade: </label>
+                        <div class="input-field-calculadora">
+                            <i class="fa-regular fa-calendar"></i>
+                            <input id="idade" type="text" class="input-calculadora" placeholder="Ex: 30" required maxlength="3"
+                            oninput="validarEntrada(event)">
+                            <span> anos </span>
+                        </div>
                     </div>
 
-                    <label for="altura" class="label-calculadora"> Altura: </label>
-                    <div class="alinhamento">
-                        <input id="altura" type="text" class="input-calculadora" placeholder="Ex: 1,75" required>
-                        <span>
-                            m
-                        </span>
+                    <div>
+                        <label for="altura" class="label-calculadora"> Altura: </label>
+                        <div class="input-field-calculadora">
+                            <i class="fa-solid fa-ruler"></i>
+                            <input id="altura" type="text" class="input-calculadora" placeholder="Ex: 1.75" required maxlength="4"
+                            oninput="validarEntrada(event)">
+                            <span> m </span>
+                        </div>
                     </div>
 
-                    <label for="peso" class="label-calculadora"> Peso: </label>
-                    <div class="alinhamento">
-                        <input id="peso" type="text" class="input-calculadora" placeholder="Ex: 78,8" required>
-                        <span>
-                            kg
-                        </span>
+                    <div>
+                        <label for="peso" class="label-calculadora"> Peso: </label>
+                        <div class="input-field-calculadora">
+                            <i class="fa-solid fa-weight-hanging"></i>
+                            <input id="peso" type="text" class="input-calculadora" placeholder="Ex: 78.8" required maxlength="4"
+                            oninput="validarEntrada(event)">
+                            <span> kg </span>
+                        </div>
                     </div>
 
-                    <button id="botao-calcular-calculadora"> CALCULAR </button>
+                    <button id="botao-calcular-calculadora" onclick="calcularImc(event)"> CALCULAR </button>
                 </form>
             </div>
         </div>
 
-        <div id="resultado-imc" class="hidden">
-            <h2> Resultado </h2>
-
-            <div>
-                <p>
-                    Seu IMC é:
-                </p>
-                <span id="valor-imc"></span>
+        <div id="resultado-imc">
+            <div id="imc">
+                <h2> Resultado </h2>
+                <span> Seu IMC é: </span>
+                <div id="resultado" class="hidden">
+                    <span id="valor-imc"></span>
+                    <span id="descricao-resultado"></span>
+                </div>
             </div>
         </div>
 
-        <h2> Entenda seu resultado </h2>
-        <p>
-            A classificação do índice de massa corporal (IMC) pode ajudar a identificar problemas de obesidade ou desnutrição, em crianças, adolescentes, adultos e idosos.
-        </p>
+        <div>
+            <h2> Entenda seu resultado </h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse maiores repellendus suscipit voluptates obcaecati. Laudantium voluptatum vel molestias dolorem nulla laborum nostrum neque, doloremque numquam blanditiis aperiam in, quas veritatis.
+            </p>
 
-        <p>
-            Além de calcular o valor de IMC, esta calculadora também indica qual o intervalo de peso ideal que deve ter para garantir uma melhor qualidade de vida.
-        </p>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi quisquam tempora, doloribus officiis amet in consequuntur impedit magnam placeat quod corporis cupiditate ipsam voluptates. Eveniet, nisi. Sit deserunt modi sed.
+            </p>
 
-        <p>
-            Ter um peso dentro do intervalo de peso ideal ajuda ainda a evitar o aparecimento de várias doenças crônicas, como diabetes e hipertensão garantindo um estilo de vida saudável.
-        </p>
+            <p>
+                Medidas de risco da circunferência abdominal Homem: 94cm Mulheres: 80cm.
+            </p>
+        </div>
 
-        <p>
-            Medidas de risco da circunferência abdominal Homem: 94cm Mulheres: 80cm.
-        </p>
+        <div class="alinhamento-centro">
+            <!-- Hierarquia de tabelas (simples)
+                TABLE = tabela
+                    TABLE ROW = linha da tabela (tr)
+                        TABLE HEADER = cabeçalho da tabela
+                        TABLE DATA = dado da tabela (td) -->
+            <table class="tabela-classificacao-imc">
+                <tr class="cabecalho-tabela">
+                    <td> IMC </td>
+                    <td> Classificação </td>
+                </tr>
+                
+                <tr class="linha-azul">
+                    <td> Menor que 18,5 </td>
+                    <td> Abaixo do normal </td>
+                </tr>
 
-        <!-- Hierarquia de tabelas (simples)
-             TABLE = tabela
-                TABLE ROW = linha da tabela (tr)
-                    TABLE HEADER = cabeçalho da tabela
-                    TABLE DATA = dado da tabela (td) -->
-        <table class="tabela-classificacao-imc">
-            <tr class="cabecalho-tabela">
-                <td> IMC </td>
-                <td> Classificação </td>
-            </tr>
-            
-            <tr class="linha-azul">
-                <td> Menor que 18,5 </td>
-                <td> Abaixo do normal </td>
-            </tr>
+                <tr>
+                    <td> 18,5 a 24,9 </td>
+                    <td> Normal </td>
+                </tr>
+                
+                <tr class="linha-azul"> 
+                    <td> 25 a 29,9 </td>
+                    <td> Sobrepeso </td>
+                </tr>
 
-            <tr>
-                <td> 18,5 a 24,9 </td>
-                <td> Normal </td>
-            </tr>
-            
-            <tr class="linha-azul"> 
-                <td> 25 a 29,9 </td>
-                <td> Sobrepeso </td>
-            </tr>
+                <tr>
+                    <td> 30 a 39,9 </td>
+                    <td> Obesidade Grau 1 </td>
+                </tr>
+                
+                <tr class="linha-azul">
+                    <td> 35 a 39,9 </td>
+                    <td> Obesidade Grau 2 </td>
+                </tr>
 
-            <tr>
-                <td> 30 a 39,9 </td>
-                <td> Obesidade Grau 1 </td>
-            </tr>
-            
-            <tr class="linha-azul">
-                <td> 35 a 39,9 </td>
-                <td> Obesidade Grau 2 </td>
-            </tr>
+                <tr>
+                    <td> Acima de 40 </td>
+                    <td> Obesidade Grau 3 </td>
+                </tr>
+            </table>
 
-            <tr>
-                <td> Acima de 40 </td>
-                <td> Obesidade Grau 3 </td>
-            </tr>
-        </table>
+            <img id="imagem-medicina" src="images/medicina.png" alt="Imagem medicina">
+        </div>
 
-        <h2> O que fazer para melhorar o IMC? </h2>
+        <div>
+            <h2> O que fazer para melhorar o IMC? </h2>
 
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus porro eaque dolore dignissimos esse praesentium nostrum non ipsam deserunt, maxime veniam veritatis cum quae officia harum dolores dolorem ea tenetur.
-        </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis ipsum quidem reprehenderit repudiandae suscipit possimus minus corrupti voluptatum laboriosam maxime laudantium, eius porro, nulla est vitae. Quae hic sint suscipit.
+            </p>
 
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At rerum ad asperiores nemo iste corporis aliquam dolores earum doloribus quisquam laborum, sit optio delectus unde architecto incidunt voluptatibus inventore doloremque.
+            </p>
+
+            <p>
+                Sempre que possível, o resultado de IMC deve ser interpretado por um nutricionista, que irá adequar a dieta de acordo com os objetivos de cada pessoa e seu histórico de saúde.
+            </p>
+        </div>
     </main>
 
     <footer>
-
         <div class="rodape">
             <img src="images/logo-uniessa.png" alt="Logo Uniessa">
         </div>
