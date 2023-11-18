@@ -56,7 +56,7 @@ header h1 {
     color: white;
     font-family: var(--fonte-titulo);
     font-size: 3em;
-    margin-left: 400px;
+    margin-left: 470px;
     margin-bottom: 10px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.548);
 }
@@ -85,31 +85,30 @@ nav {
     text-decoration: none;
 }
 
-
-
 main {
     background-color: white;
     min-width: 300px;
     max-width: 1500px;
-    padding-top: 25px;
-    padding-bottom: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     margin: auto;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.483);
 }
 
-main h2 {
+main > div h2 {
     color: var(--cor-azul-escuro);
     font-size: 1.6em;
     font-weight: bold;
     text-indent: 30px;
-    padding: 25px 50px;
+    text-align: center;
+    padding: 15px 50px;
     text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.548);
     margin: 0px;
 }
 
 main h3 {
-    text-indent: 30px;
-    padding: 15px 50px;
+    font-size: 1.2em;
+    padding: 15px 35px;
     margin: 0px;
 }
 
@@ -123,68 +122,58 @@ main p {
     margin: 0px;
 }
 
-
 .faq {
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-
-
-
-
-
-
-.conteiner-faq h3{
-    
-}
-
-.conteiner-faq p{
-    
-}
-
-.conteiner-faq,
-.user-guide {
     margin: 60px;
     padding: 20px;
     background-color: white;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
-.user-guide h3{
-    
+#duvidas {
+    max-width: 900px;
+    margin: auto;
 }
 
-.user-guide p{
-    
+.pergunta {
+    margin: 50px;
 }
 
-.faq-container {
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto;
-  }
+.pergunta button {
+    display: flex;
+    /* Distribui os elementos horizontalmente */
+    justify-content: space-between;
+    align-items: center;
+}
 
-.faq-question {
-    cursor: pointer;
+.pergunta i {
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+#guia-usuario h3 {
+    font-weight: bold;
+    text-decoration: underline;
+    margin: 15px 42px;
+}
+
+#guia-usuario ul {
+    /* Emoji antes da lista (Emojipedia) (00A0 = espaço) */
+    list-style-type: '\1F537\00A0\00A0';
+}
+
+#guia-usuario li {
+    margin:20px 75px;
+}
+
+.alinhamento-centro {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
-  }
+    justify-content: space-between;
+}
 
-  .faq-arrow {
-    font-size: 1.5rem;
-    margin-right: 10px;
-  }
-
-  .faq-answer {
-    display: none;
-    margin-left: 30px;
-    padding: 10px;
-    background-color: #f0f0f0;
-  }
-
+#imagem-guia-usuario {
+    margin-right: 100px;
+}
 footer {
     color: white;
     background-color: var(--cor-azul-escuro);
@@ -192,7 +181,7 @@ footer {
     align-items: center;
     /* Distribui os elementos horizontalmente */
     justify-content: space-between;
-    height: 170px;
+    height: 200px;
 }
 
 footer h2 {

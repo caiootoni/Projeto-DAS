@@ -4,7 +4,6 @@ function calcularImc(event) {
 
     const idade = document.getElementById('idade').value;
     const peso = document.getElementById('peso').value;
-    localStorage.setItem('peso', peso);
     const altura = document.getElementById('altura').value;
 
     if (idade <= 0 || idade >= 110) {
@@ -21,7 +20,6 @@ function calcularImc(event) {
 
     // ToFixed -> Aparece 2 casas depois da vírgula
     const imc = (peso / (altura * altura)).toFixed(2);
-    localStorage.setItem('resultadoImc', imc);
 
     const valorImc = document.getElementById('valor-imc');
     let descricaoResultado = '';
@@ -37,7 +35,7 @@ function calcularImc(event) {
     } else if (imc > 30 && imc <= 35) {
         descricaoResultado = 'Cuidado! Você está com obesidade moderada!';
     } else if (imc > 35 && imc <= 40) {
-        descricaoResultado = 'Cuidado! Você está com obesidade severa!';
+        descricaoResultado = 'Cuidade! Você está com obesidade severa!';
     } else {
         descricaoResultado = 'Cuidado! Você está com obesidade morbida!';
     }
